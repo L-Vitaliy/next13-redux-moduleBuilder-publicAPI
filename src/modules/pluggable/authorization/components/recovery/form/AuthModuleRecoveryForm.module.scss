@@ -1,0 +1,28 @@
+@use '../../../../../../styles/tokens' as token;
+@use '../../../../../../styles/vars';
+
+.AuthModuleRecoveryForm__form {
+  max-width: 640px;
+  margin: token.$offset-16 auto;
+  padding: 0 token.$offset-48;
+  @include vars.media-down(tablet-large) {
+    padding: 0 token.$offset-16;
+  }
+}
+
+.AuthModuleRecoveryForm__btn {
+  @include vars.rowXCenter;
+  margin: token.$offset-24 0 0;
+  @include vars.media-down(tablet-large) {
+    & > * {
+      min-width: 184px;
+    }
+  }
+}
+
+.AuthModuleRecoveryForm__error {
+  @include vars.font-14;
+  margin-top: token.$offset-8;
+  color: token.$danger-active;
+  font-weight: 600;
+}

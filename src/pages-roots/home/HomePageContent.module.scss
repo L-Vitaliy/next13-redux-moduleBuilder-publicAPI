@@ -1,0 +1,54 @@
+@use '../../styles/vars';
+@use '../../styles/tokens' as token;
+@use '../../styles/styles/layout' as tokenLayout;
+
+.HomePageContent__container {
+  position: relative;
+  width: 100%;
+
+  .HomePageContent__section {
+    position: relative;
+    margin-bottom: token.$offset-48;
+
+    @include vars.media-down(tablet-large) {
+      margin-bottom: token.$offset-24;
+    }
+  }
+
+  .HomePageContent__sectionContent {
+    width: 100%;
+  }
+
+  .HomePageContent__sectionInner {
+    max-width: tokenLayout.$layout-container;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: token.$offset-16;
+    padding-left: token.$offset-16;
+  }
+
+  .HomePageContent__sub_to_newsletter {
+    position: relative;
+    margin-bottom: 0;
+    padding-top: token.$offset-16;
+    padding-bottom: token.$offset-16;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      content: '';
+      background-color: token.$brand-static;
+      @include vars.media-down(tablet-large) {
+        left: calc(var(--offset-16) * -1);
+        width: calc(100% + var(--offset-16) * 2);
+      }
+      @include vars.media-up(tablet-large) {
+        right: 50vw;
+        bottom: 0;
+        left: -50vw;
+        width: 200vw;
+      }
+    }
+  }
+}

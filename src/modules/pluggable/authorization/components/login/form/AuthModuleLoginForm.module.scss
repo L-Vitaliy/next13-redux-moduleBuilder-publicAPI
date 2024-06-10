@@ -1,0 +1,49 @@
+@use '../../../../../../styles/styles/modal' as modalToken;
+@use '../../../../../../styles/tokens' as token;
+@use '../../../../../../styles/vars';
+
+.AuthModuleLoginForm__form {
+  padding: 0 token.$offset-48;
+  @include vars.media-down(tablet-large) {
+    padding: 0 token.$offset-16;
+  }
+}
+
+.AuthModuleLoginForm__input:first-child {
+  margin-bottom: token.$offset-24;
+  @include vars.media-down(tablet-large) {
+    margin-bottom: token.$offset-16;
+  }
+}
+
+.AuthModuleLoginForm__forgetPass {
+  @include vars.button-reset;
+  @include vars.font-14;
+  display: inline-block;
+  margin-top: token.$offset-16;
+  cursor: pointer;
+  text-decoration: underline;
+  color: token.$gray-65;
+  font-weight: 600;
+}
+
+.AuthModuleLoginForm__forgetPass:hover {
+  color: token.$brand-hover;
+}
+
+.AuthModuleLoginForm__error {
+  @include vars.font-14;
+  margin-top: token.$offset-8;
+  color: token.$danger-active;
+  font-weight: 600;
+}
+
+.AuthModuleLoginForm__btn {
+  @include vars.rowXCenter;
+  margin: token.$offset-24 0;
+  @include vars.media-down(tablet-large) {
+    & > * {
+      min-width: 184px;
+    }
+  }
+}
